@@ -1,0 +1,20 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'StudentRecruitmentSystem/master'.
+#
+# Changes to be committed:
+#	modified:   WebContent/index.html
+#	modified:   WebContent/resources/js/Login.js
+#	modified:   build/classes/Methods/UserOperations.class
+#	modified:   src/Methods/UserOperations.java
+#
+# Untracked files:
+#	WebContent/WEB-INF/lib/gson-2.2.4-javadoc.jar
+#	WebContent/WEB-INF/lib/gson-2.2.4-sources.jar
+#	WebContent/WEB-INF/lib/gson-2.2.4.jar
+#	build/classes/Methods/LoginFunctions.class
+#	src/Methods/LoginFunctions.java
+#
+

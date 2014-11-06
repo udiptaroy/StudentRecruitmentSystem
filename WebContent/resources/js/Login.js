@@ -1,8 +1,8 @@
 
 $(document).ready(function(){ 
-	        $("#frm1").submit( function()
+	        $("#frm2").submit( function()
            {
-             value = $('#frm1').serialize();
+             value = $('#frm2').serialize();
                $.ajax({
             	type: "POST",
                 url: "LoginFunctions",
@@ -15,7 +15,7 @@ $(document).ready(function(){
                          $("#msgid").html("");
                          $("#msgid").append("<b>Server data:</b> " + data + "");*/
                 	if(data =="true")
-                		  window.location="http://localhost:8080/StudBudCtr/Home.html";
+                		  window.location="http://localhost:8080/StudentRecruitmentSystem/StudentHome.html";
                 	else{
                 		alert("User not found");
                 	}
