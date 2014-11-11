@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+        <title>Create Application</title>
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <script src="resources/js/jquery-2.1.1.min.js"></script>
+		<script src="resources/js/Application.js"></script>
+        <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Create Application</h1>
+			</header>
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                         <div id="wrapper">
+                       <div id="login" class="animate form">
+                            <form id="frm3"> 
+                                <h1> Details </h1> 
+                                   <p> 
+                                    <label for="gre" class="gre" > Your GRE Score</label>
+                                    <input id="gre" name="gre" type="number" required="required" maxlength="3"/> 
+                                </p>
+                                 <p> 
+                                    <label for="ielts" class="ielts" > Your IELTS Score</label>
+                                    <input id="ielts" name="ielts" type="number" step="any" required="required" maxlength="3"/> 
+                                </p>
+                                <p> 
+                                    <label for="gpa" class="gpa" > Your GPA</label>
+                                    <input id="gpa" name="gpa" type="number" step="any" required="required" maxlength="3"/> 
+                                </p>
+                               
+                              <p> 
+                                    <label for="interest" class="interest" > Your Area of Interest</label>
+                                    <input id="interest" name="interest" type="text" required="required" maxlength="44" placeholder="Your Address"/> 
+                                </p>
+                                
+								<p>
+									<label for="program" class="program" >Your Program</label><br/>
+								<select name="program" id="progOptions" >
+</select>
+</p>
+	<p>
+									<label for="degree" class="degree" >Your Degree Title</label><br/>
+								<select name="degree" id="degOptions" >
+</select>
+</p>
+	<p> 
+                                    <label for="term" class="term" >Term</label>
+                                    <input id="term" name="term" type="text" required="required" maxlength="20" placeholder="Term you are applying to"/> 
+                               </p>
+                               <p> 
+                                    <label for="year" class="year" >Year</label>
+                                    <input id="year" name="year" type="number" required="required" placeholder="Year you are applying to"/> 
+                                </p>
+<p class="signin button"> 
+									<input name="submit" type="submit" value="Submit"/> 
+								</p>
+                                
+                            </form>
+                       
+						
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>

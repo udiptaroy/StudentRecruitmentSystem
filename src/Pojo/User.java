@@ -22,6 +22,10 @@ public User(String UName,String Name,String Pwd,String Email,String Addrs,String
 	this.ssn=SSN;
 	this.county=Cnty;
 }
+public User(String uname, String pwd){
+	this.username=uname;
+	this.password=pwd;
+}
 
 public String getUsername() {
 	return username;

@@ -1,11 +1,13 @@
 
 $(document).ready(function(){ 
-	        $("#frm2").submit( function()
+	
+	
+	       $("#frm4").submit( function()
            {
-             value = $('#frm2').serialize();
+             value = $('#frm4').serialize();
                $.ajax({
             	type: "POST",
-                url: "LoginFunctions",
+                url: "UpdateFunctions",
                 data: value,
                 dataType: "json",
                 //if received a response from the server
@@ -15,7 +17,7 @@ $(document).ready(function(){
                          $("#msgid").html("");
                          $("#msgid").append("<b>Server data:</b> " + data + "");*/
                 	if(data =="true")
-                		  window.location="http://localhost:8080/StudentRecruitmentSystem/StudentHome.html";
+                		  window.location="http://localhost:8080/StudentRecruitmentSystem/Status.html";
                 	else{
                 		alert("User not found");
                 	}
@@ -32,14 +34,14 @@ $(document).ready(function(){
                 beforeSend: function(jqXHR, settings){
                     settings.data += "&dummyData=whatever";
                     //disable the button until we get the response
-                    $('#frm1').attr("disabled", true);
+                    $('#frm4').attr("disabled", true);
                 },
                 
                 //this is called after the response or error functions are finsihed
                 //so that we can take some action
                 complete: function(jqXHR, textStatus){
                     //enable the button 
-                    $('#frm1').attr("disabled", false);
+                    $('#frm4').attr("disabled", false);
                 }
       
             });  

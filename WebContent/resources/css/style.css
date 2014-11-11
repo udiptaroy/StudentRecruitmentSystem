@@ -5,10 +5,7 @@
 	 margin: 0 auto;
 	 font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
 }
-#dashborad{
-	float: left;
-}
-/** fonts used for the icons **/ 
+* fonts used for the icons **/ 
 @font-face {
     font-family: 'FontomasCustomRegular';
     src: url('fonts/fontomas-webfont.eot');
@@ -42,13 +39,16 @@ a.hiddenanchor{
 	width: 500px;
 	position: relative;	
 }
+
 /**** Styling the form elements **/
 
 /**** general text styling ****/
 #wrapper a{
 	color: rgb(95, 155, 198);
 	text-decoration: underline;
-}
+	}
+	
+
 
 #wrapper h1{
 	font-size: 48px;
@@ -464,3 +464,11 @@ p.change_link{
 	        box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
 } 
 
+#stbl th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+#stbl th, td {
+    padding: 5px;
+    text-align: left;
+}
