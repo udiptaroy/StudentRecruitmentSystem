@@ -1,6 +1,6 @@
 package Methods;
 import Pojo.Application;
-
+import Pojo.createApplication;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,11 +16,11 @@ import com.google.gson.Gson;
 /**
  * Servlet implementation class LoginFunctions
  */
-@WebServlet("/ApplicationFunctions")
-public class ApplicationFunctions extends HttpServlet {
+@WebServlet("/DecisionFunctions")
+public class DecisionFunctions extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ApplicationFunctions() {
+    public DecisionFunctions() {
         super();
     }
 
@@ -30,26 +30,12 @@ public class ApplicationFunctions extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		String requestName = request.getParameter("requestName");
-		UserOperations up = new UserOperations();
-		
-		if(requestName.equalsIgnoreCase("getProgramName")){
-			ArrayList<String> s = up.getProgramName();
-			 response.getWriter().write(new Gson().toJson(s));
-				System.out.println("str is = "+s);
+			AdminOps ao=new AdminOps();
+		if(requestName.equalsIgnoreCase("getCreateApps")){
+			ArrayList<createApplication> ca = ao.fetchApplications();
+			 response.getWriter().write(new Gson().toJson(ca));
+				System.out.println("str is = "+ca);
 				System.out.println("response created");
-		}else if(requestName.equalsIgnoreCase("getTitle")){
-			ArrayList<String> s = up.getTitle();
-		response.getWriter().write(new Gson().toJson(s));
-			System.out.println("str is = "+s);
-			System.out.println("response created");
-		}
-		else if(requestName.equalsIgnoreCase("getStatus")){
-			HttpSession session=request.getSession();
-			String username=(String)session.getAttribute("user");
-			ArrayList<String> s = up.trackStatus(username);
-		response.getWriter().write(new Gson().toJson(s));
-			System.out.println("str is = "+s);
-			System.out.println("response created");
 		}
 				
 		
@@ -71,12 +57,11 @@ public class ApplicationFunctions extends HttpServlet {
 		Application app=new Application(gre,ielts,gpa,interest,username,program,title,term,year);
 		UserOperations uo= new UserOperations();
 		
-		String res=uo.createApp(app);
-		createJsonObject(response,res);
-/*		if(res)
+		boolean res=uo.createApp(app);
+		if(res)
 		createJsonObject(response,"true");
 		else
-			createJsonObject(response,"false");*/
+			createJsonObject(response,"false");
 			}
 
 	private void createJsonObject(HttpServletResponse response,String str) throws IOException{

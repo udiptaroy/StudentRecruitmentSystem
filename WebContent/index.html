@@ -25,17 +25,21 @@
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
+                    	 
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form id="frm1"> 
+                            <form id="frm1" action="javascript:mySubmitFunction()"> 
                                 <h1>Log in</h1> 
                                 <p> 
-                                    <label for="uname" class="uname" > Your username</label>
-                                    <input id="uname" name="uname" required="required" type="text"/>
+                                    <label for="uname1" class="uname1" > Your username</label>
+                                    <input id="uname2" name="uname2" required="required" type="text"/>
                                 </p>
                                 <p> 
-                                    <label for="password" class="youpasswd"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <label for="password1" class="youpasswd1"> Your password </label>
+                                    <input id="password2" name="password2" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                </p>
+                                <p>
+                                	<label id="lblDisplayMsg"></label>
                                 </p>
                                  <p class="login button"> 
                                     <input name="submit1" type="submit" value="Login" /> 
@@ -48,7 +52,7 @@
                         </div>
 
                         <div id="register" class="animate form">
-                            <form id="frm2"> 
+                            <form id="frm2" action="javascript:mySubmitFunctionForm2()"> 
                                 <h1> Sign up </h1> 
                                    <p> 
                                     <label for="uname" class="uname" > Your Username</label>
@@ -391,6 +395,10 @@
                                     <label for="County" class="county" > Your County</label>
                                     <input id="county" name="county" type="text"  maxlength="20" placeholder="Your County"/> 
                                 </p>
+                                <p>
+                                	<label id="lblDisplayMsg1"></label>
+                                </p>
+
 <p class="signin button"> 
 									<input name="submit" type="submit" value="Sign up"/> 
 								</p>
@@ -404,7 +412,7 @@
 						
                     </div>
                 </div>  
-            </section>
+           </div> </section>
         </div>
     </body>
 </html>

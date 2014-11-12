@@ -1,6 +1,8 @@
 
 $(document).ready(function(){ 
 	
+	$("#lblDisplayMsg").text("");
+	
 	$.getJSON( "ApplicationFunctions?requestName=getProgramName", function(result) {
 	    for (var i = 0; i < result.length; i++) {
 	    $('#progOptions')
@@ -19,7 +21,7 @@ $(document).ready(function(){
 	});
 	
 	
-	
+	/*
 	       $("#frm3").submit( function()
            {
              value = $('#frm3').serialize();
@@ -31,9 +33,9 @@ $(document).ready(function(){
                 //if received a response from the server
                 success: function(data) {
                 	window.location="http://localhost:8080/StudentRecruitmentSystem/Status.html";
-              /*  alert(data);
+                alert(data);
                          $("#msgid").html("");
-                         $("#msgid").append("<b>Server data:</b> " + data + "");*/
+                         $("#msgid").append("<b>Server data:</b> " + data + "");
                 	if(data =="true")
                 		  window.location="http://localhost:8080/StudentRecruitmentSystem/Status.html";
                 	else{
@@ -66,9 +68,27 @@ $(document).ready(function(){
             
            }
            
-        );
+        );*/
         
        
      });
 
-   
+function mySubmitFunctionForm3(){
+	 value = $('#frm3').serialize();
+     $.ajax({
+  	type: "POST",
+      url: "ApplicationFunctions",
+      data: value,
+      dataType: "json",
+      //if received a response from the server
+      success: function(data) {
+      	if(data =="SUCCESS")
+      		  window.location="http://localhost:8080/StudentRecruitmentSystem/Status.html";
+      	else{
+      		$("#lblDisplayMsg").text(""+data);
+      	}
+      	
+           
+      }
+     });
+}

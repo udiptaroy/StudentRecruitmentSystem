@@ -29,9 +29,9 @@ public class LoginFunctions extends HttpServlet {
 		response.setContentType("application/json;charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		String username;
-		username=request.getParameter("uname");
+		username=request.getParameter("uname2");
 		String pwd = null;
-		pwd=request.getParameter("password");
+		pwd=request.getParameter("password2");
 		UserOperations uo= new UserOperations();
 		boolean res=uo.login(username, pwd);
 		if(res){

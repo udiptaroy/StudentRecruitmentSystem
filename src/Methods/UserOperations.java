@@ -63,8 +63,8 @@ public boolean updateAccount(User user){
 
 }
 
-public boolean createApp(Application app){
-	boolean result=false;
+public String createApp(Application app){
+	String result="";
 	PreparedStatement preparedstatement=null, preparedstatement1 = null;
 	
 	  try {
@@ -81,10 +81,10 @@ public boolean createApp(Application app){
 			preparedstatement.execute();
 			 preparedstatement1=conn.prepareStatement("call createApp("+gre+","+ielts+","+gpa+",'"+interest+"','"+username+"','"+programName+"','"+degTitle+"','"+term+"',"+year+")");
 			preparedstatement1.execute();
-			result=true;	
+			result="SUCCESS";	
        return result;
 	    }catch (SQLException sql) {
-
+	    	result = sql.getMessage();
 	        System.out.println(sql.getMessage());
 	        return result;
 	          }
@@ -130,7 +130,7 @@ public boolean login(String username, String pwd){
 			 preparedstatement1=conn.prepareStatement(sql);
 			 ResultSet rs=preparedstatement1.executeQuery();
 			 while(rs.next())
-			result=true;;
+			result=true;
 	       return result;
 	    }catch (SQLException sql) {
 

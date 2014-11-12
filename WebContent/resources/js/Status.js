@@ -1,6 +1,4 @@
-
 $(document).ready(function(){ 
-	
 	$.getJSON( "ApplicationFunctions?requestName=getStatus", function(result) {
 		$('#sbtl').append($("<tr>"));
 	    for (var i = 0; i < result.length; i++) {

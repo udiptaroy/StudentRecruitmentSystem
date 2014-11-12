@@ -14,6 +14,13 @@
         <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
+    <style>
+    a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #FF0000;
+}
+    </style>
     </head>
     <body>
         <div class="container">
@@ -21,9 +28,12 @@
                 <h1>Create Application</h1>
 			</header>
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                        <div >
+                         	 <a href="http://localhost:8080/StudentRecruitmentSystem/StudentHome.html">Go to Home Page</a>
+                       </div>
                          <div id="wrapper">
                        <div id="login" class="animate form">
-                            <form id="frm3"> 
+                            <form id="frm3" action="javascript:mySubmitFunctionForm3()"> 
                                 <h1> Details </h1> 
                                    <p> 
                                     <label for="gre" class="gre" > Your GRE Score</label>
@@ -46,13 +56,13 @@
 								<p>
 									<label for="program" class="program" >Your Program</label><br/>
 								<select name="program" id="progOptions" >
-</select>
-</p>
-	<p>
+								</select>
+							</p>
+							<p>
 									<label for="degree" class="degree" >Your Degree Title</label><br/>
 								<select name="degree" id="degOptions" >
-</select>
-</p>
+								</select>
+								</p>
 	<p> 
                                     <label for="term" class="term" >Term</label>
                                     <input id="term" name="term" type="text" required="required" maxlength="20" placeholder="Term you are applying to"/> 
@@ -61,6 +71,10 @@
                                     <label for="year" class="year" >Year</label>
                                     <input id="year" name="year" type="number" required="required" placeholder="Year you are applying to"/> 
                                 </p>
+                                 <p>
+                                	<label id="lblDisplayMsg"></label>
+                                </p>
+
 <p class="signin button"> 
 									<input name="submit" type="submit" value="Submit"/> 
 								</p>

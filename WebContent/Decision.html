@@ -7,43 +7,35 @@
     <head>
         <meta charset="UTF-8" />
         <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-        <title>Give Decision</title>
+        <title>Create Application</title>
         <link rel="shortcut icon" href="../favicon.ico"> 
         <script src="resources/js/jquery-2.1.1.min.js"></script>
-		<script src="resources/js/Status.js"></script>
+		<script src="resources/js/Decision.js"></script>
         <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
-
-		<style>
-		    a {
-		    text-decoration: underline;
-		    font-weight: bold;
-		    color: #FF0000;
-		}
-    </style>
     </head>
     <body>
         <div class="container">
             <header>
                 <h1>Application Decision Page</h1>
 			</header>
-  						<div >
-                         	 <a href="http://localhost:8080/StudentRecruitmentSystem/StudentHome.html">Go to Home Page</a>
-                       </div>
+                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                          <div id="wrapper">
                        <div id="login" class="animate form">
-                            <table id="sbtl" style="width:100%">
+                            <table id="dectl" style="width:100%">
 							  <tr>
 							  	<th>Username</th>
-							  	<th>ProgramName</th>
-							  	<th>Degree Title</th>
+							  	<th>Program</th>
+							  	<th>Degree</th>
 							  	<th>Term</th>
 							  	<th>Year</th>
 							  	<th>Status</th>
 							  </tr>
 							  </table>             
-						
+						<p class="signin button"> 
+									<input name="submit" type="submit" value="Submit"/> 
+								</p>
                     </div>
             </div>
         </div>
