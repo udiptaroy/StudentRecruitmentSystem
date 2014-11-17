@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import java.io.*;
 
@@ -47,11 +48,15 @@ public class RegistrationFunctions extends HttpServlet {
 		ssn=request.getParameter("ssn");
 		String county = null;
 		county=request.getParameter("county");
+	
 		User user=new User(username,name,pwd,email,address,state,country,ssn,county);
 		UserOperations uo= new UserOperations();
 		boolean res=uo.createAccount(user);
-		if(res)
+		if(res){
 		createJsonObject(response,"true");
+		HttpSession session=request.getSession();
+		session.setAttribute("user",  username);
+		}
 		else
 			createJsonObject(response,"false");
 			}

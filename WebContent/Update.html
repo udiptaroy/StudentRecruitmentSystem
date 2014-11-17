@@ -14,6 +14,13 @@
         <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
+    <style>
+    a {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #FF0000;
+}
+    </style>
     </head>
     <body>
         <div class="container">
@@ -21,11 +28,13 @@
                 <h1>Update Contact Info Form</h1>
 				            </header>
             
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+                		<div >
+                         	 <a href="http://localhost:8080/StudentRecruitmentSystem/StudentHome.html">Go to Home Page</a>
+                       </div>
                 
                     <div id="wrapper">
                          <div id="login" class="animate form">
-                            <form id="frm4"> 
+                            <form id="frm4" action="javascript:mySubmitFunctionForm4()">
                                 <h1> Update Details</h1> 
                                    
                                 <p> 
@@ -49,7 +58,7 @@
                                 
 								<p>
 									<label for="State" class="state" > State</label><br/>
-								<select name="state">
+								<select name="state" id="selectState">
 	<option value="">N/A</option>
 	<option value="AL">AL</option>
 	<option value="AK">AK</option>
@@ -105,8 +114,9 @@
 </select>
 </p>
 <p>
-	<label for="Country" class="country" >Country</label><br/>
+	<label for="Country" class="country" id="selectCountry">Country</label><br/>
 	<select name="country">
+	<option value="">N/A</option>
 	<option value="AF">Afghanistan</option>
 	<option value="AX">Åland Islands</option>
 	<option value="AL">Albania</option>
@@ -366,7 +376,11 @@
                                     <label for="County" class="county" > Your County</label>
                                     <input id="county" name="county" type="text"  maxlength="20" placeholder="Your County"/> 
                                 </p>
-<p class="signin button"> 
+                                  <p>
+                                	<label id="lblDisplayMsg"></label>
+                                </p>
+                              
+								<p class="signin button"> 
 									<input name="submit" type="submit" value="Submit"/> 
 								</p>
                                 
@@ -375,6 +389,7 @@
 						
                     </div>
              
+        </div>
         </div>
     </body>
 </html>

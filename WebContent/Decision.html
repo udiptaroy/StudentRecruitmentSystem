@@ -23,8 +23,10 @@
                     <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
                          <div id="wrapper">
                        <div id="login" class="animate form">
+                       	<form id="frm6" action="javascript:mySubmitFunctiondectl()">
                             <table id="dectl" style="width:100%">
 							  <tr>
+							  	<th>APP ID</th>
 							  	<th>Username</th>
 							  	<th>Program</th>
 							  	<th>Degree</th>
@@ -32,10 +34,14 @@
 							  	<th>Year</th>
 							  	<th>Status</th>
 							  </tr>
-							  </table>             
+							  </table>    
+							   <p>
+                                	<label id="lblDisplayMsg"><font color="red"></font></label>
+                                </p>         
 						<p class="signin button"> 
 									<input name="submit" type="submit" value="Submit"/> 
 								</p>
+                    </form>
                     </div>
             </div>
         </div>

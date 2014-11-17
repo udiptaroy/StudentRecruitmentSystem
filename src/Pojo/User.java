@@ -11,6 +11,9 @@ private String country;
 private String ssn;
 private String county;
 
+public User(){
+	
+}
 public User(String UName,String Name,String Pwd,String Email,String Addrs,String State,String Cntry,String SSN,String Cnty){
 	this.username=UName;
 	this.name=Name;
@@ -62,5 +65,34 @@ public String getSsn() {
 public String getCounty() {
 	return county;
 }
+public void setUsername(String username) {
+	this.username = username;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+public void setState(String state) {
+	this.state = state;
+}
+public void setCountry(String country) {
+	this.country = country;
+}
+public void setSsn(String ssn) {
+	this.ssn = ssn;
+}
+public void setCounty(String county) {
+	this.county = county;
+}
+
+
 
 }

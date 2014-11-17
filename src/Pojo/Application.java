@@ -11,6 +11,9 @@ public class Application {
 	private String Term;
 	private int year;
 	
+	public Application(){
+		
+	}
 	public Application (int Gre, double Ielts, double Gpa, String Interest,String uname,String pName,String degTitle,String term,int yr ){
 		this.gre=Gre;
 		this.ielts=Ielts;

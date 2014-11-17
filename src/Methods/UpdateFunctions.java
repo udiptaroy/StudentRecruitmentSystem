@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.*;
+import java.util.ArrayList;
+
 import com.google.gson.Gson;
 
 /**
@@ -23,7 +25,22 @@ public class UpdateFunctions extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("application/json;charset=UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		
+		String requestName = request.getParameter("requestName");
+		HttpSession session=request.getSession();
+		String username=(String)session.getAttribute("user");
+		
+		UserOperations up = new UserOperations();
+		
+		if(requestName.equalsIgnoreCase("getUserDetails")){
+			
+			User s = up.getUserDetails(username);
+			 response.getWriter().write(new Gson().toJson(s));
+				System.out.println("str is = "+s);
+				System.out.println("response created");
+		}
 		
 				
 		

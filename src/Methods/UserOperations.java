@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
 public class UserOperations {
 	 Connection conn=DBConnection.getInstance().getConnection();
 public boolean createAccount(User user){
@@ -156,6 +158,61 @@ public ArrayList<String> getProgramName(){
 
 	        System.out.println(sql.getMessage());
 	        return program;
+	          }
+
+	  }
+public User getUserDetails(String username){
+	User userDetails = new User();
+	PreparedStatement preparedstatement=null,preparedstatement1=null,preparedstatement2=null,preparedstatement3=null;
+	  try {
+		  	  preparedstatement=conn.prepareStatement("use project_2;");
+			preparedstatement.execute();
+			 String sql="select a.name as name,a.password as pwd,a.addresss as address,a.email_id as email from user a where a.U_Name='"+username+"'";
+			 String sql1="select  ssn, county from instate where  U_Name='"+username+"'";
+			 String sql2="select ssn,state from outstate where  U_Name='"+username+"'";
+			 String sql3="select intnl.nationality as country from international intnl where  intnl.U_Name='"+username+"'";
+			 System.out.println("sql is "+ sql);
+			 preparedstatement=conn.prepareStatement(sql);
+			 preparedstatement1=conn.prepareStatement(sql1);
+			 preparedstatement2=conn.prepareStatement(sql2);
+			 preparedstatement3=conn.prepareStatement(sql3);
+			 
+			 ResultSet rs=preparedstatement.executeQuery();
+			 ResultSet rs1=preparedstatement1.executeQuery();
+			 ResultSet rs2=preparedstatement2.executeQuery();
+			 ResultSet rs3=preparedstatement3.executeQuery();
+			
+			
+			 while(rs.next()){
+				 
+				 userDetails.setAddress(rs.getString("address"));
+				 userDetails.setEmail(rs.getString("email"));
+				 userDetails.setPassword(rs.getString("pwd"));
+				userDetails.setName(rs.getString("name"));
+				while(rs1.next()){
+					userDetails.setCountry("USA");
+					userDetails.setState("NC");
+					userDetails.setSsn(rs1.getString("ssn"));
+					userDetails.setCounty(rs1.getString("county"));
+				}
+				while(rs2.next()){
+					userDetails.setCountry("USA");
+					userDetails.setState(rs2.getString("state"));
+					userDetails.setSsn(rs2.getString("ssn"));
+					userDetails.setCounty("");
+				}
+				while(rs3.next()) {
+					userDetails.setCountry(rs3.getString("country"));
+					userDetails.setState("");
+					userDetails.setSsn("");
+					userDetails.setCounty("");
+				}
+			 }
+			 return userDetails; 
+	    }catch (SQLException sql) {
+
+	        System.out.println(sql.getMessage());
+	        return null;
 	          }
 
 }
