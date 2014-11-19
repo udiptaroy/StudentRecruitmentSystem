@@ -19,7 +19,7 @@ public class AdminOps {
 			  preparedstatement=conn.prepareStatement("use project_2;");
 				preparedstatement.execute();
 				 String sql="select af.A_id,af.U_Name,aph.programname,ad.title,apf.term,apf.year,af.status from app_for apf, applicationfills af, academicprogram_has aph,"
-						 +" "+"academicdegree ad where apf.a_id=af.a_id  and aph.program_id=apf.program_id and ad.degreeid=apf.degreeid and af.status is null order by af.A_id";
+						 +" "+"academicdegree ad where apf.a_id=af.a_id  and aph.program_id=apf.program_id and ad.degreeid=apf.degreeid and (af.status is null or af.status='R') order by af.A_id";
 				 preparedstatement1=conn.prepareStatement(sql);
 				 ResultSet rs=preparedstatement1.executeQuery();
 				 while(rs.next()){
@@ -35,6 +35,31 @@ public class AdminOps {
 		          }
 
 }
+	public ArrayList<createApplication> fetchApplications1(){
+		PreparedStatement preparedstatement=null, preparedstatement1 = null;
+		ArrayList<createApplication> ca=new ArrayList<createApplication>();	
+		  try {
+			   
+			  preparedstatement=conn.prepareStatement("use project_2;");
+				preparedstatement.execute();
+				 String sql="select af.A_id,af.U_Name,aph.programname,ad.title,apf.term,apf.year,af.status from app_for apf, applicationfills af, academicprogram_has aph,"
+						 +" "+"academicdegree ad where apf.a_id=af.a_id  and aph.program_id=apf.program_id and ad.degreeid=apf.degreeid and af.status in('A','D') order by af.A_id";
+				 preparedstatement1=conn.prepareStatement(sql);
+				 ResultSet rs=preparedstatement1.executeQuery();
+				 while(rs.next()){
+					createApplication c=new createApplication(""+rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),""+rs.getInt(6),rs.getString(7)); 	
+					 	ca.add(c);
+				 }
+				preparedstatement1.execute();
+		       return ca;
+		    }catch (SQLException sql) {
+
+		        System.out.println(sql.getMessage());
+		        return ca;
+		          }
+
+}
+
 	
 	public String updateEntireApplication(ArrayList<AppDecisionList> input){
 		String result = "SUCCESS";

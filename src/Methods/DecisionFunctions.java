@@ -42,6 +42,12 @@ public class DecisionFunctions extends HttpServlet {
 				System.out.println("str is = "+ca);
 				System.out.println("response created");
 		}
+		if(requestName.equalsIgnoreCase("getCreateApps1")){
+			ArrayList<createApplication> ca = ao.fetchApplications1();
+			 response.getWriter().write(new Gson().toJson(ca));
+				System.out.println("str is = "+ca);
+				System.out.println("response created");
+		}
 				
 		
 	}
